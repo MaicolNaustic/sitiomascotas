@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Equipo - PET STORE</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+    background-color: #B4DFB3;
+    }
+    header img {
+    width: 150px;
+    height: auto;
+    }
+    nav {
+    background-color: #69D0B3;
+    }
+    nav a {
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+    }
+    .equipo-container {
+    background-color: #D9CF85;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(105, 208, 179, 0.3);
+    }
+    .miembro {
+    border: 2px solid #CDE4B3;
+    background-color: #D9CF85;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    }
+    .miembro img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10%; 
+    margin-right: 15px;
+    border: 3px solid #9BDAB3;
+    }
+    .titulo {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 30px 0 20px 0;
+    color: #3B3B3B;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="text-center my-3">
+    <img src="img\LOGO.jpg" alt="Logo de la empresa">
+  </header>
+
+  <nav class="text-center py-2">
+    <a href="index.html">INICIO</a>
+    <a href="nosotros.html">NOSOTROS</a>
+    <a href="equipo.html">EQUIPO</a>
+    <a href="clientes.html">CLIENTES</a>
+    <a href="productos.html">PRODUCTOS</a>
+    <a href="promociones.html">PROMOCIONES</a>
+    <a href="sucursales.html">SUCURSALES</a>
+    <a href="login.html">LOGIN</a>
+  </nav>
+
+  <div class="titulo">
+    "NUESTRO EQUIPO"
+  </div>
+
+  <div class="container equipo-container" id="equipo">
+    <div class="row" id="equipo-row">
+    </div>
+  </div>
+
+  <script>
+    const equipo = [
+      {
+        nombre: "Jorge Paucar",
+        correo: "jpaucar@petstore.com",
+        tipo: "Administrativo",
+        codigo: "EMP001",
+        puesto: "Gerente General",
+        imagen: "img/miembro1.jpg"
+      },
+      {
+        nombre: "Carlos Pérez",
+        correo: "carlos@petstore.com",
+        tipo: "Operativo",
+        codigo: "EMP002",
+        puesto: "Veterinario",
+        imagen: "img/miembro2.jpg"
+      },
+      {
+        nombre: "Nestor Torres",
+        correo: "ntorres@petstore.com",
+        tipo: "Administrativo",
+        codigo: "EMP003",
+        puesto: "Contador",
+        imagen: "img/miembro3.jpg"
+      },
+      {
+        nombre: "Mario Jiménez",
+        correo: "mario@petstore.com",
+        tipo: "Operativo",
+        codigo: "EMP004",
+        puesto: "Encargado de Inventario",
+        imagen: "img/miembro4.jpg"
+      },
+      {
+        nombre: "Laura Castillo",
+        correo: "laura@petstore.com",
+        tipo: "Ventas",
+        codigo: "EMP005",
+        puesto: "Asesora Comercial",
+        imagen: "img/miembro5.jpg"
+      },
+      {
+        nombre: "Camila Gómez",
+        correo: "cgomez@petstore.com",
+        tipo: "Operativo",
+        codigo: "EMP006",
+        puesto: "Cajera",
+        imagen: "img/miembro8.jpg"
+      },
+      {
+        nombre: "María Vega",
+        correo: "maria@petstore.com",
+        tipo: "Administrativo",
+        codigo: "EMP007",
+        puesto: "RRHH",
+        imagen: "img/miembro6.jpg"
+      },
+      {
+        nombre: "José Ruiz",
+        correo: "jose@petstore.com",
+        tipo: "Seguridad",
+        codigo: "EMP008",
+        puesto: "Guardia",
+        imagen: "img/miembro7.jpg"
+      }
+    ];
+
+    const row = document.getElementById("equipo-row");
+
+    equipo.forEach((miembro, index) => {
+      const col = document.createElement("div");
+      col.className = "col-md-6";
+
+      col.innerHTML = `
+        <div class="miembro">
+          <img src="${miembro.imagen}" alt="Foto de ${miembro.nombre}">
+          <div>
+            <strong>${miembro.nombre}</strong><br>
+            ${miembro.correo}<br>
+            ${miembro.tipo}<br>
+            Código: ${miembro.codigo}<br>
+            Puesto: ${miembro.puesto}
+          </div>
+        </div>
+      `;
+
+      row.appendChild(col);
+    });
+  </script>
+
+
+</body>
+</html>

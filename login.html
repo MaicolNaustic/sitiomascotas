@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #B4DFB3;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #69D0B3;
+            padding: 10px 40px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header img {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background-color: #D9CF85;
+        }
+
+        nav a:hover {
+            background-color: #CDE4B3;
+        }
+
+        .login-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 30px;
+            text-decoration: underline;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #9BDAB3;
+            background-color: #CDE4B3;
+            width: 200px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #69D0B3;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9BDAB3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="img/LOGO.jpg" alt="Logo">
+            <nav>
+                <a href="index.html">INICIO</a>
+                <a href="nosotros.html">NOSOTROS</a>
+                <a href="equipo.html">EQUIPO</a>
+                <a href="clientes.html">CLIENTES</a>
+                <a href="productos.html">PRODUCTOS</a>
+                <a href="promociones.html">PROMOCIONES</a>
+                <a href="sucursales.html">SUCURSALES</a>
+                <a href="login.html">LOGIN</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login-title">"LOGIN"</div>
+
+    <div class="login-form">
+        <div class="form-group">
+            <label for="usuario">USUARIO:</label>
+            <input type="text" id="usuario" placeholder="Ingrese su usuario">
+        </div>
+        <div class="form-group">
+            <label for="contrasena">CONTRASEÑA:</label>
+            <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
+        </div>
+        <button onclick="iniciarSesion()">Iniciar</button>
+    </div>
+
+    <script>
+        function iniciarSesion() {
+            const usuario = document.getElementById("usuario").value;
+            const contrasena = document.getElementById("contrasena").value;
+            const usuarioValido = "unemi";
+            const contrasenaValida = "web2025";
+
+            if (usuario === usuarioValido && contrasena === contrasenaValida) {
+                alert("Inicio de sesión exitoso");
+            } else {
+                alert("Credenciales incorrectas");
+            }
+        }
+    </script>
+
+</body>
+</html>

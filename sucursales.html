@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sucursales</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #B4DFB3;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #69D0B3;
+            padding: 10px 40px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header img {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background-color: #D9CF85;
+        }
+
+        nav a:hover {
+            background-color: #CDE4B3;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 30px 0 20px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .sucursales-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 0 40px 40px;
+        }
+
+        .sucursal {
+            background-color: #CDE4B3;
+            border-radius: 20px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sucursal img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 4px solid #9BDAB3;
+        }
+
+        .sucursal p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 992px) {
+            .sucursales-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sucursales-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="img/LOGO.jpg" alt="Logo">
+            <nav>
+                <a href="index.html">INICIO</a>
+                <a href="nosotros.html">NOSOTROS</a>
+                <a href="equipo.html">EQUIPO</a>
+                <a href="clientes.html">CLIENTES</a>
+                <a href="productos.html">PRODUCTOS</a>
+                <a href="promociones.html">PROMOCIONES</a>
+                <a href="sucursales.html">SUCURSALES</a>
+                <a href="login.html">LOGIN</a>
+            </nav>
+        </div>
+    </header>
+
+    <h2>"NUESTRAS SUCURSALES"</h2>
+
+    <div class="sucursales-container" id="sucursales-container">
+    </div>
+
+    <script>
+        const sucursales = [
+            {
+                img: "img/sucursal1.jpg",
+                provincia: "Pichincha",
+                ciudad: "Quito",
+                direccion: "Av. Amazonas y Patria"
+            },
+            {
+                img: "img/sucursal2.jpg",
+                provincia: "Guayas",
+                ciudad: "Guayaquil",
+                direccion: "Av. 9 de Octubre y Boyacá"
+            },
+            {
+                img: "img/sucursal3.jpg",
+                provincia: "Azuay",
+                ciudad: "Cuenca",
+                direccion: "Av. Solano y Remigio Crespo"
+            },
+            {
+                img: "img/sucursal4.jpg",
+                provincia: "Manabí",
+                ciudad: "Portoviejo",
+                direccion: "Av. Reales Tamarindos y Chile"
+            },
+            {
+                img: "img/sucursal5.jpg",
+                provincia: "Tungurahua",
+                ciudad: "Ambato",
+                direccion: "Av. Cevallos y Montalvo"
+            },
+            {
+                img: "img/sucursal6.jpg",
+                provincia: "Loja",
+                ciudad: "Loja",
+                direccion: "Av. Universitaria y Catamayo"
+            },
+            {
+                img: "img/sucursal7.jpg",
+                provincia: "El Oro",
+                ciudad: "Machala",
+                direccion: "Av. Ferroviaria y Bolívar"
+            },
+            {
+                img: "img/sucursal8.jpg",
+                provincia: "Esmeraldas",
+                ciudad: "Esmeraldas",
+                direccion: "Av. Libertad y 10 de Agosto"
+            }
+        ];
+
+        const container = document.getElementById("sucursales-container");
+
+        sucursales.forEach(sucursal => {
+            const div = document.createElement("div");
+            div.classList.add("sucursal");
+
+            div.innerHTML = `
+                <img src="${sucursal.img}" alt="Sucursal">
+                <p><strong>DIRECCIÓN (${sucursal.provincia})</strong></p>
+                <p>${sucursal.ciudad}</p>
+                <p>${sucursal.direccion}</p>
+            `;
+
+            container.appendChild(div);
+        });
+    </script>
+
+</body>
+</html>
